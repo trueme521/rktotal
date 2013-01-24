@@ -1,0 +1,4 @@
+EXPORTS
+
+  Get7zCompressInterface PRIVATE
+  Get7zExtractInterface PRIVATE

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XmlLib", "XmlLib.vcproj", "{43EDB5BB-AE0A-480F-80A4-58683BCB4E69}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example(MSXml)", "Example\Example(MSXml).vcproj", "{EEF59A73-9A34-427C-8FE3-E322C97CA2C1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43EDB5BB-AE0A-480F-80A4-58683BCB4E69} = {43EDB5BB-AE0A-480F-80A4-58683BCB4E69}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example(TinyXml)", "Example\Example(TinyXml).vcproj", "{B83BB5AA-BB29-4D84-8DFA-08E94EEC3AE2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43EDB5BB-AE0A-480F-80A4-58683BCB4E69} = {43EDB5BB-AE0A-480F-80A4-58683BCB4E69}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43EDB5BB-AE0A-480F-80A4-58683BCB4E69}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43EDB5BB-AE0A-480F-80A4-58683BCB4E69}.Debug|Win32.Build.0 = Debug|Win32
+		{43EDB5BB-AE0A-480F-80A4-58683BCB4E69}.Release|Win32.ActiveCfg = Release|Win32
+		{43EDB5BB-AE0A-480F-80A4-58683BCB4E69}.Release|Win32.Build.0 = Release|Win32
+		{EEF59A73-9A34-427C-8FE3-E322C97CA2C1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EEF59A73-9A34-427C-8FE3-E322C97CA2C1}.Debug|Win32.Build.0 = Debug|Win32
+		{EEF59A73-9A34-427C-8FE3-E322C97CA2C1}.Release|Win32.ActiveCfg = Release|Win32
+		{EEF59A73-9A34-427C-8FE3-E322C97CA2C1}.Release|Win32.Build.0 = Release|Win32
+		{B83BB5AA-BB29-4D84-8DFA-08E94EEC3AE2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B83BB5AA-BB29-4D84-8DFA-08E94EEC3AE2}.Debug|Win32.Build.0 = Debug|Win32
+		{B83BB5AA-BB29-4D84-8DFA-08E94EEC3AE2}.Release|Win32.ActiveCfg = Release|Win32
+		{B83BB5AA-BB29-4D84-8DFA-08E94EEC3AE2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

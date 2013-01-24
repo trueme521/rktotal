@@ -1,0 +1,26 @@
+EXPORTS
+	_CppUnit_RunAllTests
+	_CppUnit_Initialize
+	_CppUnit_Terminate
+	_CppUnit_CreateTestSuiteBuilderContext
+	_CppUnit_DeleteTestSuiteBuilderContext
+	_CppUnit_AddTest
+	_CppUnit_Suite
+	_CppUnit_SuiteEx
+	_CppUnit_GetRegistry
+	_CppUnit_RegisterFactory
+	_CppUnit_RegisterFactory1
+	_CppUnit_UnregisterFactory
+	_CppUnit_UnregisterFactory1
+	_CppUnit_ThrowException
+	_CppUnit_Fail
+	_CppUnit_FailNotEqual
+	_CppUnit_FailNotEqual_1
+	_CppUnit_CreateTestSuiteFactory
+	_CppUnit_DeleteTestSuiteFactory
+	_CppUnit_FilterCase
+	_CppUnit_RegisterProcedure
+	_CppUnit_BreakAlloc
+	_CppUnit_RegisterFactory_ByName
+	_CppUnit_UnregisterFactory_ByName
+	_CppUnit_RunAllTests_ByName
