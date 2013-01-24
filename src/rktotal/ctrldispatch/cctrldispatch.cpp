@@ -3,10 +3,12 @@
 #include "AutoLog.h"
 
 
+
 extern CCtrlDispatch* g_pCtrl;
 
 CCtrlDispatch::CCtrlDispatch():m_pDrvObj(NULL),
-m_pCtrlDev(NULL)
+m_pCtrlDev(NULL),
+m_WindowVersion(enumInvalidSystem)
 {
     RtlZeroMemory(m_szReg, sizeof(m_szReg));
     RtlInitEmptyUnicodeString(&m_RegPath, m_szReg, sizeof(m_szReg));
@@ -30,6 +32,9 @@ BOOL CCtrlDispatch::Init(PDRIVER_OBJECT pDrvObj, PUNICODE_STRING pRegPath)
     RtlInitUnicodeString(&DevName, DEVICE_NAME);
     RtlInitUnicodeString(&SymName, SYMBOL_NAME);
     BOOL bSymSucess = FALSE;
+#ifdef _DEBUG
+    DbgBreakPoint();
+#endif
 
     for (int nFunc = 0; nFunc < IRP_MJ_MAXIMUM_FUNCTION; ++nFunc)
     {
@@ -40,6 +45,10 @@ BOOL CCtrlDispatch::Init(PDRIVER_OBJECT pDrvObj, PUNICODE_STRING pRegPath)
     {
         bRet = m_pCtrlDev->Init(pDrvObj, pRegPath);
     }
+
+    m_WindowVersion = DrvUtilHelper::GetSystemVersion();
+
+    KdPrint(("system  Version:%d\n", m_WindowVersion));
 
     return bRet;
 }

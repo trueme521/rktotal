@@ -256,6 +256,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\common\DrvUtilHelper.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\common\DrvUtilHelper.h"
+				>
+			</File>
+			<File
 				RelativePath=".\icmdctrl.h"
 				>
 			</File>

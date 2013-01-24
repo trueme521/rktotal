@@ -11,6 +11,7 @@
 
 #include "stdafx.h"
 #include "ctrldevice.h"
+#include "common/DrvUtilHelper.h"
 
 
 
@@ -30,6 +31,8 @@ public:
 
     static NTSTATUS DriverDispatch(PDEVICE_OBJECT pDevObj, PIRP Irp);
 
+    ULONG GetSystemVersion();
+
 public:
     ctrldevice *m_pCtrlDev;
 
@@ -37,6 +40,7 @@ private:
     UNICODE_STRING m_RegPath;
     WCHAR m_szReg[MAX_REG_PATH_LEN];
     PDRIVER_OBJECT m_pDrvObj;
+    ULONG m_WindowVersion;
 
 };
 
