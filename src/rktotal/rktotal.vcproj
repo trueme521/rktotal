@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="kisknl"
+	Name="rktotal"
 	ProjectGUID="{109775A6-563B-42FC-802E-F94A98F3C693}"
 	RootNamespace="kdekernel"
 	>
@@ -251,6 +251,42 @@
 		<Filter
 			Name="common"
 			>
+			<File
+				RelativePath=".\common.h"
+				>
+			</File>
+			<File
+				RelativePath=".\icmdctrl.h"
+				>
+			</File>
+			<Filter
+				Name="mem"
+				>
+				<File
+					RelativePath=".\memory\cpprt.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="log"
+				>
+				<File
+					RelativePath=".\AutoLog.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="drvutil"
+				>
+				<File
+					RelativePath=".\drvutil.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\drvutil.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="header"
@@ -263,6 +299,34 @@
 				RelativePath=".\stdafx.h"
 				>
 			</File>
+		</Filter>
+		<Filter
+			Name="ctrldispatch"
+			>
+			<File
+				RelativePath=".\ctrldispatch\cctrldispatch.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ctrldispatch\cctrldispatch.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="ctrldevice"
+			>
+			<File
+				RelativePath=".\ctrldevice.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ctrldevice.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="fsddevice"
+			>
 		</Filter>
 		<File
 			RelativePath=".\warning.h"

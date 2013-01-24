@@ -1,4 +1,8 @@
 #include "stdafx.h"
+#include "common.h"
+#include  "ctrldispatch/cctrldispatch.h"
+#include  "memory/cpprt.h"
+#include "AutoLog.h"
 
 extern "C"
 NTSTATUS 
@@ -14,6 +18,7 @@ DriverEntry (
 ULONG  DefaultPoolTag = '_rkt';
 
 
+CCtrlDispatch* g_pCtrl = NULL;
 //////////////////////////////////////////////////////////////////////////
  
 VOID
@@ -28,10 +33,23 @@ DriverEntry (
     PUNICODE_STRING    RegistryPath
     )
 {
-	UNREFERENCED_PARAMETER(RegistryPath);
-    NTSTATUS status = STATUS_SUCCESS;//STATUS_UNSUCCESSFUL;
-	
-	KdPrint(("Kdfs::DriverEntry()\n"));
+	CAutoPrintLog log(__FUNCTION__);
+    UNREFERENCED_PARAMETER(RegistryPath);
+    NTSTATUS status = STATUS_UNSUCCESSFUL;
+
+    do 
+    {
+        g_pCtrl = new CCtrlDispatch;
+
+        if (g_pCtrl == NULL)
+        {
+            break;
+        }
+
+        g_pCtrl->Init(DriverObject, RegistryPath);
+        status = STATUS_SUCCESS;
+    } while (FALSE);
+   
 
 #ifdef _DEBUG
 	DriverObject->DriverUnload = OnUnload;

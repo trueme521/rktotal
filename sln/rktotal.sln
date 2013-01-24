@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kisknl", "..\src\rktotal\kisknl.vcproj", "{109775A6-563B-42FC-802E-F94A98F3C693}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rktotal", "..\src\rktotal\rktotal.vcproj", "{109775A6-563B-42FC-802E-F94A98F3C693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
