@@ -92,7 +92,6 @@ NTSTATUS DenyToCallLowerDriver(
 {
     Irp->IoStatus.Status = nsStatus;
     Irp->IoStatus.Information = nRetLen;
-
     IoCompleteRequest(Irp, IO_NO_INCREMENT);
     return nsStatus;
 }

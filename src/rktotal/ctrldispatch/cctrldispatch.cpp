@@ -13,6 +13,7 @@ m_WindowVersion(enumInvalidSystem)
     RtlZeroMemory(m_szReg, sizeof(m_szReg));
     RtlInitEmptyUnicodeString(&m_RegPath, m_szReg, sizeof(m_szReg));
     m_pCtrlDev = new ctrldevice;
+    m_pInline = new inlinehook;
 }
 
 CCtrlDispatch::~CCtrlDispatch()
@@ -32,8 +33,8 @@ BOOL CCtrlDispatch::Init(PDRIVER_OBJECT pDrvObj, PUNICODE_STRING pRegPath)
     RtlInitUnicodeString(&DevName, DEVICE_NAME);
     RtlInitUnicodeString(&SymName, SYMBOL_NAME);
     BOOL bSymSucess = FALSE;
-#ifdef _DEBUG
-    DbgBreakPoint();
+#ifdef DBG
+    _asm int 3
 #endif
 
     for (int nFunc = 0; nFunc < IRP_MJ_MAXIMUM_FUNCTION; ++nFunc)
@@ -44,6 +45,11 @@ BOOL CCtrlDispatch::Init(PDRIVER_OBJECT pDrvObj, PUNICODE_STRING pRegPath)
     if (m_pCtrlDev)
     {
         bRet = m_pCtrlDev->Init(pDrvObj, pRegPath);
+    }
+
+    if (m_pInline)
+    {
+        bRet &= m_pInline->Init();
     }
 
     m_WindowVersion = DrvUtilHelper::GetSystemVersion();

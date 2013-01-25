@@ -17,12 +17,29 @@ enum{
     enumWin8System,
     enumInvalidSystem,
 };
+
+#pragma pack(push, 1)
+
+typedef struct
+{
+    PVOID *pTable;              // Service Table Pointer
+    PULONG pulTableCounter;     // Table Item Counter. This table is only updated in checked builds.
+    ULONG ulServiceCounter;     // Number of services contained in this table.
+    PUCHAR rguchParamTable;     // Table containing the number of bytes of parameters the handler function takes.
+} SERVICE_TABLE;
+
+#pragma pack(pop)
 // -------------------------------------------------------------------------
 class DrvUtilHelper
 {
 public:
 
     static ULONG GetSystemVersion( );
+    static NTSTATUS HookSSDTTable();
+    static NTSTATUS HookSSDT(ULONG ulSerivceID, PVOID pNewFunc, PVOID* ppFuncOld);
+    static NTSTATUS UnHookSSDT(ULONG ulSerivceID, PVOID pFuncOld);
+    static ULONG GetNtServiceID(PVOID pAddr);
+    
 };
 
 // -------------------------------------------------------------------------

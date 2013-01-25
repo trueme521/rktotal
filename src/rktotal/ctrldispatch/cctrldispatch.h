@@ -12,8 +12,7 @@
 #include "stdafx.h"
 #include "ctrldevice.h"
 #include "common/DrvUtilHelper.h"
-
-
+#include "inlinehook/inlinehook.h"
 
 //////////////////////////////////////////////////////////////////////////
 #endif
@@ -35,13 +34,12 @@ public:
 
 public:
     ctrldevice *m_pCtrlDev;
-
+    inlinehook *m_pInline;
 private:
     UNICODE_STRING m_RegPath;
     WCHAR m_szReg[MAX_REG_PATH_LEN];
     PDRIVER_OBJECT m_pDrvObj;
     ULONG m_WindowVersion;
-
 };
 
 //////////////////////////////////////////////////////////////////////////

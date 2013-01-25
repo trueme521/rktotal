@@ -336,6 +336,18 @@
 			Name="fsddevice"
 			>
 		</Filter>
+		<Filter
+			Name="inlinehook"
+			>
+			<File
+				RelativePath=".\inlinehook\inlinehook.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\inlinehook\inlinehook.h"
+				>
+			</File>
+		</Filter>
 		<File
 			RelativePath=".\warning.h"
 			>
